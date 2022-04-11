@@ -12,7 +12,7 @@ interface CitiesDao {
     fun getCities(page: Int): List<CityEntity>
 
     @Query("SELECT * FROM cities WHERE name LIKE :cityName")
-    fun filterByCityName(cityName: String): List<CityEntity>
+    suspend fun filterByCityName(cityName: String): List<CityEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun saveCities(cityEntities: List<CityEntity>)

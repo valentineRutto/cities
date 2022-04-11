@@ -34,6 +34,12 @@ class CitiesRepository(
 
     fun getTotalPages() = lastPage
 
+    suspend fun fetchCities(name: String): Resource<List<CityEntity>> {
+        val city = citiesDao.filterByCityName(name)
+        return Resource.Success(data = city ?: emptyList())
+
+    }
+
     private fun mapResponseToEntity(citiesResponse: CitiesResponse?): List<CityEntity> {
         return citiesResponse?.data?.items?.map { item ->
             CityEntity(

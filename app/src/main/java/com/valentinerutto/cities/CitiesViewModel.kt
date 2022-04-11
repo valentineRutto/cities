@@ -36,7 +36,31 @@ class CitiesViewModel(private val citiesRepository: CitiesRepository) : ViewMode
         }
     }
 
+
+    fun filterCityByName(name: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            _isLoading.postValue(true)
+            filterCity(name = name)
+        }
+    }
+
     fun getTotalPages() = citiesRepository.getTotalPages()
+
+    suspend fun filterCity(name: String) {
+        when (val filteredCity = citiesRepository.fetchCities(name)) {
+            is Resource.Success -> {
+                _isLoading.postValue(false)
+                _successfulCitiesResponse.postValue(filteredCity.data)
+                _currentCitiesList.postValue(filteredCity.data)
+
+            }
+            is Resource.Error -> {
+                _isLoading.postValue(false)
+                _errorCitiesResponse.postValue(filteredCity.errorMessage)
+
+            }
+        }
+    }
 
     suspend fun fetchCities(page: Int) {
         when (val citiesResponse = citiesRepository.getCities(page = page)) {

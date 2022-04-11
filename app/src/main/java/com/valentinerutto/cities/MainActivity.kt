@@ -1,5 +1,8 @@
 package com.valentinerutto.cities
 
+import android.app.SearchManager
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -84,9 +87,32 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        handleIntent(intent)
+    }
+
+    private fun handleIntent(intent: Intent) {
+        if (Intent.ACTION_SEARCH == intent.action) {
+            val query = intent.getStringExtra(SearchManager.QUERY)
+
+            if (query != null) {
+                citiesViewModel.filterCityByName(query)
+            }
+
+        }
+
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.view_menu, menu)
+
+        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        (menu?.findItem(R.id.search)?.actionView as android.widget.SearchView).apply {
+            setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        }
+
         return true
     }
 
@@ -98,8 +124,6 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.map -> {
                 showMap()
-
-
                 true
             }
             else -> super.onOptionsItemSelected(item)
