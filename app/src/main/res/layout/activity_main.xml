@@ -6,18 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--     <androidx.constraintlayout.widget.ConstraintLayout-->
-    <!--         android:layout_width="match_parent"-->
-    <!--         android:id="@+id/mapLayout"-->
-    <!--         app:layout_constraintTop_toTopOf="parent"-->
-    <!--         android:layout_height="match_parent">-->
-    <!--         <fragment-->
-    <!--             android:layout_width="match_parent"-->
-    <!--             android:layout_height="match_parent"/>-->
-    <!--     </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/mapLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:id="@+id/resultLayout"
+        android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_height="match_parent">
 

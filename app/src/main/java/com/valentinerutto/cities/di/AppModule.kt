@@ -1,12 +1,12 @@
 package com.valentinerutto.cities.di
 
 import androidx.room.Room
+import com.valentinerutto.cities.CitiesViewModel
 import com.valentinerutto.cities.data.CitiesRepository
 import com.valentinerutto.cities.local.CitiesOfTheWorldDatabase
 import com.valentinerutto.cities.network.api.RetrofitClient.provideApiService
 import com.valentinerutto.cities.network.api.RetrofitClient.provideOkHttpClient
 import com.valentinerutto.cities.network.api.RetrofitClient.provideRetrofit
-import com.valentinerutto.citiesoftheworld.CitiesViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

@@ -1,4 +1,4 @@
-package com.valentinerutto.citiesoftheworld
+package com.valentinerutto.cities
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -15,6 +15,10 @@ class CitiesViewModel(private val citiesRepository: CitiesRepository) : ViewMode
     private val _successfulCitiesResponse = MutableLiveData<List<CityEntity>?>()
     val successfulCitiesResponse: LiveData<List<CityEntity>?>
         get() = _successfulCitiesResponse
+
+    private val _currentCitiesList = MutableLiveData<List<CityEntity>?>()
+    val currentCityList: MutableLiveData<List<CityEntity>?>
+        get() = _currentCitiesList
 
     private val _errorCitiesResponse = MutableLiveData<String>()
     val errorCitiesResponse: LiveData<String>
@@ -39,6 +43,7 @@ class CitiesViewModel(private val citiesRepository: CitiesRepository) : ViewMode
             is Resource.Success -> {
                 _isLoading.postValue(false)
                 _successfulCitiesResponse.postValue(citiesResponse.data)
+                _currentCitiesList.postValue(citiesResponse.data)
             }
             is Resource.Error -> {
                 _isLoading.postValue(false)
