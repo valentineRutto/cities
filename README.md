@@ -3,7 +3,6 @@
 
 Sample application built in 100% Kotlin following MVVM design architecture and implementing [Jetpack Components](https://developer.android.com/topic/libraries/architecture/).<br/><br/>
 
-This application consumes Rest API <br/><br/>
 
 # Tech Stack<br/>
 -[Kotlin](https://developer.android.com/kotlin?gclid=CjwKCAjw9r-DBhBxEiwA9qYUpWK_ANJvWx6zBkFk-4XeP5a0dCxwyFZv_EeeqAcUx1K_Mj3gGkpdxRoCW9IQAvD_BwE&gclsrc=aw.ds)- a cross-platform, statically typed, general-purpose programming language with type inference.<br/>
@@ -18,3 +17,8 @@ This application consumes Rest API <br/><br/>
 -LiveData - is an observable data holder.<br/>
 -Lifecycle - perform action when lifecycle state changes.<br/>
 -ViewModel - store and manage UI-related data in a lifecycle conscious way.<br/>
+
+# Installation<br/>
+
+clone and run the app on android studio
+
