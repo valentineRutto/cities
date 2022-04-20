@@ -11,7 +11,7 @@ Sample application built in 100% Kotlin following MVVM design architecture and i
 -[ROOM](https://developer.android.com/training/data-storage/room) - persistence library providing an abstraction over SQL .<br/>
 
 -[Retrofit[(https://square.github.io/retrofit/) - A type-safe HTTP client for Android.<br/><br/>
-[Google Maps[(https://developers.google.com/maps/documentation/android-sdk/overview?section=tutorialshttps://developers.google.com/maps/documentation/android-sdk/overview?section=tutorials) - Google maps.<br/><br/>
+[Google Maps[(https://developers.google.com/maps/documentation/android-sdk/overview?section=tutorial) - Google maps.<br/><br/>
 
 [**Jetpack**](https://developer.android.com/jetpack)<br/>
 -LiveData - is an observable data holder.<br/>
