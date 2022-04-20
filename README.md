@@ -22,9 +22,9 @@ Sample application built in 100% Kotlin following MVVM design architecture and i
 
 clone and run the app on android studio
 
-# TO-DO
--filter/search
--use pagination library
--unit test
--update ui
+# TO-DO<br/>
+-filter/search<br/>
+-use pagination library<br/>
+-unit test<br/>
+-update ui<br/>
 
